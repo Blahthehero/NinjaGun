@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/Basic Bozo Idiot Poop Face ugly mom doesnt love him-sheet.png" type="Texture" id=1]
+[ext_resource path="res://Foomba.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 13.3333 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 56.0635
+
+[node name="Foomba" type="Node2D"]
+position = Vector2( -8.94069e-08, 0 )
+scale = Vector2( 3, 3 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="Muzzle" type="Position2D" parent="."]
+position = Vector2( -5.33333, 0 )
+
+[node name="Hit_box" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hit_box"]
+position = Vector2( 2.98023e-08, 0 )
+shape = SubResource( 1 )
+
+[node name="Dagger_Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dagger_Area"]
+scale = Vector2( 3, 3 )
+shape = SubResource( 2 )
+
+[connection signal="area_entered" from="Hit_box" to="." method="_on_Area2D_area_entered"]
+[connection signal="body_entered" from="Hit_box" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Dagger_Area" to="." method="_on_Area2D2_body_entered"]
