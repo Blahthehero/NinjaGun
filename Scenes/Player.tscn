@@ -25,11 +25,9 @@ func _physics_process(delta):
 		motion.y = MAXFALLSPEED
 
 	if Input.is_action_pressed(\"ui_right\"):
-		motion.x = SPEED 
-		$Sprite.set_flip_h(false)
+		motion.x = SPEED
 	elif Input.is_action_pressed(\"ui_left\"):
 		motion.x = -SPEED
-		$Sprite.set_flip_h(true)
 	else:
 		motion.x = SCROLLSPEED
 		$AnimationPlayer.play(\"idle\")
@@ -82,7 +80,7 @@ anims/idle = SubResource( 2 )
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Play"]
 
 [node name="gun" parent="Play" instance=ExtResource( 3 )]
-position = Vector2( 24, -16 )
+position = Vector2( 14, -4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( -512, -328 )

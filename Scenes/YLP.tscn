@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Stone.tscn" type="PackedScene" id=7]
 
 [node name="YLP\?" type="Node2D"]
+position = Vector2( 1, 0 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [ -312.0 ]
