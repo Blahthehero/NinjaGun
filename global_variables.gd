@@ -1,9 +1,16 @@
 extends Node
-var Player_Life = 1000
+var Player_Life = 1000 setget Set_Player_Life
 var PlayerAlive = true
 var SCROLLSPEED = 300
 var OnScreen = true
-onready var Player = get_node("/root/YLP?/Player/Play")
+var KnockBack = false
+
+func Set_Player_Life(Player_life):
+	KnockBack = true
+	Player_Life -= 100
+	yield(get_tree().create_timer(.1), "timeout")
+	KnockBack = false
+
 
 func _process(delta):
 	if Player_Life <= 0: 

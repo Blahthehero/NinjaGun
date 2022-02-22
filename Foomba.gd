@@ -24,11 +24,6 @@ func _on_Area2D_area_entered(area):
 
 func _on_Area2D_body_entered(body):
 	if body.get_name() == 'Play':
-		if position.x > PlayPos.position.x:
-			PlayPos.position.x -= 500
-		if position.x < PlayPos.position.x:
-			PlayPos.position.x += 500
-		
 		GlobalVariables.Player_Life -= 100
 
 func _on_Area2D2_body_entered(body):
